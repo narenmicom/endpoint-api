@@ -14,8 +14,9 @@ def hello_world():
 @app.route("/postdata", methods = ['POST'])
 def postdata():
   if request.method == 'POST':
-    print("POSTER")
-    print(request.form['eventType'])
+    print(request.content_type)
+    print(request.json)
+    # print(request.form['eventType'])
   return "OK"
 
 if __name__ == "__main__":
